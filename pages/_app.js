@@ -19,6 +19,7 @@ import ExternalPlugins from '@/components/ExternalPlugins'
 import GlobalHead from '@/components/GlobalHead'
 import { zhCN } from '@clerk/localizations'
 import dynamic from 'next/dynamic'
+import { Analytics } from '@vercel/analytics/react'
 // import { ClerkProvider } from '@clerk/nextjs'
 const ClerkProvider = dynamic(() =>
   import('@clerk/nextjs').then(m => m.ClerkProvider)
@@ -69,6 +70,7 @@ const MyApp = ({ Component, pageProps }) => {
       ) : (
         content
       )}
+      <Analytics />
     </>
   )
 }
